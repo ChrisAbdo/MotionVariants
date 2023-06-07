@@ -91,7 +91,7 @@ export default function Home() {
                       <TooltipTrigger asChild>
                         <Button
                           onClick={() => restartAnimation(index)}
-                          variant="outline"
+                          variant="ghost"
                         >
                           <RefreshCcw size={24} />
                         </Button>
@@ -105,18 +105,20 @@ export default function Home() {
               </div>
             </div>
             <TabsContent value="preview">
-              <Card>
-                <CardContent className="space-y-2 mt-4">
+              <Card className="bg-background">
+                <CardContent className="bg-background text-primary space-y-2 mt-4">
                   {variant.preview}
                 </CardContent>
               </Card>
             </TabsContent>
             <TabsContent value="code">
-              <Card>
+              <Card className="bg-background">
                 <CardContent className="space-y-2">
                   <ScrollArea className="h-96">
                     <pre className="text-sm font-mono">
-                      <code className="language-jsx">{variant.code}</code>
+                      <code className="language-jsx text-primary">
+                        {variant.code}
+                      </code>
                     </pre>
                   </ScrollArea>
                 </CardContent>
