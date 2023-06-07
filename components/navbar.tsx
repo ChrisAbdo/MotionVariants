@@ -1,6 +1,16 @@
+"use client";
+
+import React from "react";
 import Link from "next/link";
 import { Button } from "./ui/button";
-import { Star } from "lucide-react";
+import { Laptop, Loader2, Moon, Star, Sun } from "lucide-react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { useTheme } from "next-themes";
 
 const navigation = [
   { name: "Text Variants", href: "/text-variants" },
@@ -9,8 +19,13 @@ const navigation = [
 ];
 
 export default function Navbar() {
+  let { theme, setTheme } = useTheme();
+
+  let [mounted, setMounted] = React.useState(false);
+
+  React.useEffect(() => setMounted(true), []);
   return (
-    <header className="bg-white z-50">
+    <header className="z-50">
       <nav
         className="z-50 mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
@@ -40,10 +55,41 @@ export default function Navbar() {
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Button variant="outline" className="z-50">
-            <Star className="mr-2" size={16} />
-            Star on GitHub
-          </Button>
+          <div className="flex space-x-2">
+            <Button variant="outline" className="z-50">
+              <Star className="mr-2" size={16} />
+              Star on GitHub
+            </Button>
+            {mounted ? (
+              <DropdownMenu>
+                <DropdownMenuTrigger asChild>
+                  <Button variant="ghost" className="z-50">
+                    {theme === "light" && <Sun size={16} />}
+                    {theme === "dark" && <Moon size={16} />}
+                    {theme === "system" && <Laptop size={16} />}
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-32 mr-12">
+                  <DropdownMenuItem onSelect={() => setTheme("light")}>
+                    <Sun className="mr-2 h-4 w-4" />
+                    <span>Light</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onSelect={() => setTheme("dark")}>
+                    <Moon className="mr-2 h-4 w-4" />
+                    <span>Dark</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onSelect={() => setTheme("system")}>
+                    <Laptop className="mr-2 h-4 w-4" />
+                    <span>System</span>
+                  </DropdownMenuItem>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Button variant="ghost" className="z-50">
+                <Loader2 className="animate-spin" size={16} />
+              </Button>
+            )}
+          </div>
         </div>
       </nav>
     </header>

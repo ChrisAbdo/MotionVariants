@@ -37,7 +37,7 @@ export default function Example() {
   const words = sentence.split(" ");
 
   return (
-    <div className="bg-white">
+    <div>
       <main className="isolate">
         {/* Hero section */}
         <div className="relative pt-14">
@@ -71,13 +71,13 @@ export default function Example() {
                 >
                   <motion.h1
                     variants={FADE_DOWN_ANIMATION_VARIANTS}
-                    className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl"
+                    className="text-4xl font-bold tracking-tight sm:text-6xl"
                   >
                     Beautiful Framer Motion Animations
                   </motion.h1>
                   <motion.p
                     variants={FADE_DOWN_ANIMATION_VARIANTS}
-                    className="mt-6 text-lg leading-8 text-gray-600"
+                    className="mt-6 text-lg leading-8"
                   >
                     A collection of handmade, free, and ready to use animations
                     & variants for your next project.
@@ -167,13 +167,13 @@ export default function Example() {
               </motion.h2>
               <motion.p
                 variants={FADE_UP_ANIMATION_VARIANTS}
-                className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                className="mt-2 text-3xl font-bold tracking-tight sm:text-4xl"
               >
                 Beautiful Framer Motion Animations
               </motion.p>
               <motion.p
                 variants={FADE_UP_ANIMATION_VARIANTS}
-                className="mt-6 text-lg leading-8 text-gray-600"
+                className="mt-6 text-lg leading-8"
               >
                 This example contains the fade up animation variant.
               </motion.p>
@@ -183,7 +183,7 @@ export default function Example() {
 
         {/* Testimonial section */}
         <div className="mx-auto mt-32 max-w-7xl sm:mt-56 sm:px-6 lg:px-8">
-          <div className="relative overflow-hidden bg-gray-900 px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
+          <div className="relative overflow-hidden  px-6 py-20 shadow-xl sm:rounded-3xl sm:px-10 sm:py-24 md:px-12 lg:px-20">
             <div className="absolute inset-0 bg-gray-900/90 mix-blend-multiply" />
             <div
               className="absolute -left-80 -top-56 transform-gpu blur-3xl"
@@ -244,7 +244,7 @@ export default function Example() {
         </div>
 
         {/* CTA section */}
-        <div className="relative -z-10 mt-32 px-6 lg:px-8">
+        <div className="relative z-50 mt-32 px-6 lg:px-8">
           <div
             className="absolute inset-x-0 top-1/2 -z-10 flex -translate-y-1/2 transform-gpu justify-center overflow-hidden blur-3xl sm:bottom-0 sm:right-[calc(50%-6rem)] sm:top-auto sm:translate-y-0 sm:transform-gpu sm:justify-end"
             aria-hidden="true"
@@ -276,7 +276,7 @@ export default function Example() {
                 animate={inViewMulti ? "visible" : "hidden"}
                 variants={MULTIDIRECTION_SLIDE_VARIANTS}
                 transition={{ duration: 1 }}
-                className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                className="text-3xl font-bold tracking-tight sm:text-4xl"
               >
                 Multi Direction
               </motion.h1>
@@ -286,7 +286,7 @@ export default function Example() {
                 animate={inViewMulti ? "visible" : "hidden"}
                 variants={MULTIDIRECTION_SLIDE_VARIANTS}
                 transition={{ duration: 1 }}
-                className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                className="text-3xl font-bold tracking-tight sm:text-4xl"
               >
                 Slide
               </motion.h1>
@@ -296,7 +296,7 @@ export default function Example() {
                 animate="visible"
                 variants={MULTIDIRECTION_SLIDE_VARIANTS}
                 transition={{ duration: 1 }}
-                className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
+                className="text-3xl font-bold tracking-tight sm:text-4xl"
               >
                 Example
               </motion.h1>
