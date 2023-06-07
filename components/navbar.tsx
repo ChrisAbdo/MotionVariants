@@ -10,13 +10,13 @@ const navigation = [
 
 export default function Navbar() {
   return (
-    <header className="bg-white">
+    <header className="bg-white z-50">
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        className="z-50 mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <h1 className="text-2xl tracking-[-0.02em] drop-shadow-sm">
+          <h1 className="z-50 text-2xl tracking-[-0.02em] drop-shadow-sm">
             <Link href="/">MotionVariants</Link>
           </h1>
         </div>
@@ -33,14 +33,14 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-0.5 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-primary before:absolute before:left-0 before:bottom-0 "
+              className="z-50 hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-0.5 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-primary before:absolute before:left-0 before:bottom-0 text-sm font-semibold leading-6"
             >
               {item.name}
             </Link>
           ))}
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <Button variant="outline">
+          <Button variant="outline" className="z-50">
             <Star className="mr-2" size={16} />
             Star on GitHub
           </Button>
