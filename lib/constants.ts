@@ -59,4 +59,3 @@ export const FADE_IN_ANIMATION_VARIANTS = {
     },
   }),
 };
-

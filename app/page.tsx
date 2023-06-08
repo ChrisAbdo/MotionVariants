@@ -4,6 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 import {
   FADE_DOWN_ANIMATION_VARIANTS,
+  FADE_IN_ANIMATION_VARIANTS,
   FADE_UP_ANIMATION_VARIANTS,
   MULTIDIRECTION_SLIDE_VARIANTS,
 } from "@/lib/constants";
@@ -44,19 +45,8 @@ export default function Example() {
     triggerOnce: false,
   });
 
-  const sentence = "This is an example of a fade in animation.";
-  const wordVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5, // duration in seconds
-      },
-    },
-  };
-
-  const words = sentence.split(" ");
+  const wordsfade = "variant-vault";
+  const lettersfade = wordsfade.split("");
 
   return (
     <div className="min-h-screen">
@@ -75,7 +65,7 @@ export default function Example() {
               }}
             />
           </div>
-          <div className="py-24 sm:py-32">
+          <div className="py-12 sm:py-0">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
               <div className="mx-auto max-w-2xl text-center">
                 <motion.div
@@ -179,7 +169,7 @@ export default function Example() {
             },
           }}
         >
-          <div className="mx-auto mt-32 max-w-7xl px-6 sm:mt-56 lg:px-8">
+          <div className="mx-auto mt-12 max-w-7xl px-6 sm:mt-56 lg:px-8">
             <div className="mx-auto max-w-2xl lg:text-center">
               <motion.h2
                 variants={FADE_UP_ANIMATION_VARIANTS}
@@ -232,13 +222,14 @@ export default function Example() {
               />
             </div>
 
-            <div className="relative mx-auto max-w-2xl lg:mx-0">
+            <div className="relative mx-auto lg:mx-0">
               <figure>
                 <blockquote className="mt-6 text-lg font-semibold text-white sm:text-xl sm:leading-8">
                   <motion.div
                     ref={ref2}
                     initial="hidden"
                     animate={inView2 ? "show" : "hidden"}
+                    viewport={{ once: false }}
                     variants={{
                       hidden: {},
                       show: {
@@ -248,16 +239,20 @@ export default function Example() {
                       },
                     }}
                   >
-                    {words.map((word, i) => (
-                      <motion.span
-                        key={`${word}-${i}`}
-                        variants={wordVariants}
-                        initial="hidden"
-                        animate={inView2 ? "visible" : "hidden"}
-                      >
-                        {word}{" "}
-                      </motion.span>
-                    ))}
+                    <div className="flex justify-center">
+                      {lettersfade.map((letter, i) => (
+                        <motion.h1
+                          key={i}
+                          variants={FADE_IN_ANIMATION_VARIANTS}
+                          initial="initial"
+                          animate={inView2 ? "animate" : "initial"}
+                          custom={i}
+                          className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
+                        >
+                          {letter}
+                        </motion.h1>
+                      ))}
+                    </div>
                   </motion.div>
                 </blockquote>
               </figure>
@@ -288,7 +283,7 @@ export default function Example() {
                       variants={FADE_UP_ANIMATION_VARIANTS}
                       className="text-base font-semibold leading-7 text-indigo-600"
                     >
-                      Everything you need
+                      Get started quickly
                     </motion.h2>
                     <motion.p
                       variants={FADE_UP_ANIMATION_VARIANTS}

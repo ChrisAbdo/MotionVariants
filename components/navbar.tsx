@@ -1,8 +1,9 @@
-'use client';
+"use client";
 
-import React from 'react';
-import Link from 'next/link';
+import React from "react";
+import Link from "next/link";
 import {
+  Braces,
   CalendarDays,
   Github,
   Laptop,
@@ -13,26 +14,26 @@ import {
   Sun,
   TerminalSquare,
   Twitter,
-} from 'lucide-react';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
+} from "lucide-react";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '@/components/ui/dropdown-menu';
+} from "@/components/ui/dropdown-menu";
 import {
   HoverCard,
   HoverCardContent,
   HoverCardTrigger,
-} from '@/components/ui/hover-card';
-import { useTheme } from 'next-themes';
+} from "@/components/ui/hover-card";
+import { useTheme } from "next-themes";
 
 const navigation = [
-  { name: 'Text Variants', href: '/text-variants' },
-  { name: 'Page Variants', href: '/page-variants' },
-  { name: 'About', href: '/about' },
+  { name: "Text Variants", href: "/text-variants" },
+  { name: "Page Variants", href: "/page-variants" },
+  { name: "About", href: "/about" },
 ];
 
 export default function Navbar() {
@@ -58,7 +59,7 @@ export default function Navbar() {
                   variant="link"
                   className="z-50 text-2xl tracking-[-0.02em] drop-shadow-sm"
                 >
-                  <TerminalSquare className="mr-2 h-6 w-6" />
+                  <Braces className="mr-2 h-6 w-6" />
                   Variant Vault
                 </Button>
               </Link>
@@ -146,21 +147,21 @@ export default function Navbar() {
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="z-50">
-                    {theme === 'light' && <Sun size={16} />}
-                    {theme === 'dark' && <Moon size={16} />}
-                    {theme === 'system' && <Laptop size={16} />}
+                    {theme === "light" && <Sun size={16} />}
+                    {theme === "dark" && <Moon size={16} />}
+                    {theme === "system" && <Laptop size={16} />}
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-32 mr-12">
-                  <DropdownMenuItem onSelect={() => setTheme('light')}>
+                  <DropdownMenuItem onSelect={() => setTheme("light")}>
                     <Sun className="mr-2 h-4 w-4" />
                     <span>Light</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={() => setTheme('dark')}>
+                  <DropdownMenuItem onSelect={() => setTheme("dark")}>
                     <Moon className="mr-2 h-4 w-4" />
                     <span>Dark</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={() => setTheme('system')}>
+                  <DropdownMenuItem onSelect={() => setTheme("system")}>
                     <Laptop className="mr-2 h-4 w-4" />
                     <span>System</span>
                   </DropdownMenuItem>

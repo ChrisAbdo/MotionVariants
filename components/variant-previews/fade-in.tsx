@@ -1,10 +1,10 @@
-import { FADE_IN_ANIMATION_VARIANTS } from '@/lib/constants';
-import { motion } from 'framer-motion';
-import React from 'react';
+import { FADE_IN_ANIMATION_VARIANTS } from "@/lib/constants";
+import { motion } from "framer-motion";
+import React from "react";
 
 export default function FadeIn() {
-  const words = 'staggered pull up';
-  const letters = words.split('');
+  const words = "staggered-pullup";
+  const letters = words.split("");
   return (
     <div className="flex justify-center">
       {letters.map((letter, i) => (

@@ -114,8 +114,6 @@ export default function AboutContent() {
             ))}
           </dl>
         </motion.div>
-
-        <AboutFooter />
       </div>
     </motion.div>
   );
