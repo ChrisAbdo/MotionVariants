@@ -22,7 +22,7 @@ export default async function OG() {
         }}
       >
         <img
-          src={new URL("../public/logo.webp", import.meta.url).toString()}
+          src={new URL("../public/logo.png", import.meta.url).toString()}
           alt="Variant Vault Logo"
           tw="w-20 h-20 mb-4 opacity-95"
         />
