@@ -29,11 +29,10 @@ export default function TextVariantsHeader({
               <div className="flex">
                 <Link
                   href="/"
-                  className="flex text-sm font-medium text-gray-500 hover:text-gray-700"
+                  className="flex text-sm font-medium text-muted-foreground hover:text-primary duration-200 transition-all"
                 >
-                  {" "}
                   <Home
-                    className="mr-2 h-5 w-5 flex-shrink-0 text-gray-400"
+                    className="mr-2 h-5 w-5 flex-shrink-0"
                     aria-hidden="true"
                   />
                   Home
@@ -43,12 +42,12 @@ export default function TextVariantsHeader({
             <li>
               <div className="flex items-center">
                 <ChevronRight
-                  className="h-5 w-5 flex-shrink-0 text-gray-400"
+                  className="h-5 w-5 flex-shrink-0 text-muted-foreground"
                   aria-hidden="true"
                 />
                 <Link
                   href="/text-variants"
-                  className="ml-4 text-sm font-medium text-gray-500 hover:text-gray-700"
+                  className="ml-4 text-sm font-medium text-muted-foreground hover:text-primary duration-200 transition-all"
                 >
                   Text Variants
                 </Link>

@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import {
   Braces,
-  CalendarDays,
   Github,
   Laptop,
   Linkedin,
@@ -12,7 +11,6 @@ import {
   Moon,
   Star,
   Sun,
-  TerminalSquare,
   Twitter,
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -124,19 +122,19 @@ export default function Navbar() {
             <Link
               key={item.name}
               href={item.href}
-              className="z-50 hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-0.5 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-primary before:absolute before:left-0 before:bottom-0 text-sm font-semibold leading-6"
+              className="z-50 hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-0.5 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-primary before:absolute before:left-0 before:bottom-0 text-xl"
             >
               {item.name}
             </Link>
           ))}
         </div>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="flex flex-1 justify-end">
           <div className="flex space-x-2">
             <Link
               href="https://www.github.com/chrisabdo/motionvariants"
               target="_blank"
               rel="noopener noreferrer"
-              className="z-50"
+              className="z-50 hidden lg:block"
             >
               <Button variant="outline">
                 <Star className="mr-2" size={16} />
