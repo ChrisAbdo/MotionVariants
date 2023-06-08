@@ -48,3 +48,15 @@ export const PAGE_SLIDE_VARIANTS = {
     },
   },
 };
+
+export const FADE_IN_ANIMATION_VARIANTS = {
+  initial: { y: 100, opacity: 0 },
+  animate: (i: any) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: i * 0.05, // Delay each letter's animation by 0.05 seconds
+    },
+  }),
+};
+

@@ -1,6 +1,6 @@
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import Link from "next/link";
-import React from "react";
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import Link from 'next/link';
+import React from 'react';
 
 export default function PageVariantsHeader() {
   return (
@@ -50,7 +50,7 @@ export default function PageVariantsHeader() {
       <div className="mt-2 md:flex md:items-center md:justify-between">
         <div className="min-w-0 flex-1">
           <h2 className="text-2xl font-bold leading-7 text-gray-900 sm:truncate sm:text-3xl sm:tracking-tight">
-            Framer Motion Page Variants with TailwindCSS
+            Framer Motion Page Variants with TailwindCSS | Work in Progress!
           </h2>
         </div>
       </div>

@@ -1,21 +1,38 @@
-"use client";
+'use client';
 
-import React from "react";
-import Link from "next/link";
-import { Button } from "./ui/button";
-import { Laptop, Loader2, Moon, Star, Sun } from "lucide-react";
+import React from 'react';
+import Link from 'next/link';
+import {
+  CalendarDays,
+  Github,
+  Laptop,
+  Linkedin,
+  Loader2,
+  Moon,
+  Star,
+  Sun,
+  TerminalSquare,
+  Twitter,
+} from 'lucide-react';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
+import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useTheme } from "next-themes";
+} from '@/components/ui/dropdown-menu';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from '@/components/ui/hover-card';
+import { useTheme } from 'next-themes';
 
 const navigation = [
-  { name: "Text Variants", href: "/text-variants" },
-  { name: "Page Variants", href: "/page-variants" },
-  { name: "About", href: "/about" },
+  { name: 'Text Variants', href: '/text-variants' },
+  { name: 'Page Variants', href: '/page-variants' },
+  { name: 'About', href: '/about' },
 ];
 
 export default function Navbar() {
@@ -31,9 +48,67 @@ export default function Navbar() {
         aria-label="Global"
       >
         <div className="flex lg:flex-1">
-          <h1 className="z-50 text-2xl tracking-[-0.02em] drop-shadow-sm">
+          {/* <h1 className="z-50 text-2xl tracking-[-0.02em] drop-shadow-sm">
             <Link href="/">MotionVariants</Link>
-          </h1>
+          </h1> */}
+          <HoverCard>
+            <HoverCardTrigger asChild className="z-50">
+              <Link href="/">
+                <Button
+                  variant="link"
+                  className="z-50 text-2xl tracking-[-0.02em] drop-shadow-sm"
+                >
+                  <TerminalSquare className="mr-2 h-6 w-6" />
+                  Variant Vault
+                </Button>
+              </Link>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80">
+              <div className="flex justify-between space-x-4">
+                <Avatar>
+                  <AvatarImage src="https://avatars.githubusercontent.com/u/66892203?v=4" />
+                  <AvatarFallback>CA</AvatarFallback>
+                </Avatar>
+                <div className="space-y-1">
+                  <h4 className="text-sm font-semibold">
+                    Built by Christopher Abdo
+                  </h4>
+                  <p className="text-sm">
+                    View more of my projects here! &darr;
+                  </p>
+                  <div className="flex items-center pt-2 space-x-2">
+                    <Link
+                      href="https://twitter.com/abdo_eth"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Button variant="ghost" size="sm">
+                        <Twitter className="h-4 w-4 opacity-70" />
+                      </Button>
+                    </Link>
+                    <Link
+                      href="https://www.github.com/chrisabdo"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      <Button variant="ghost" size="sm">
+                        <Github className="h-4 w-4 opacity-70" />
+                      </Button>
+                    </Link>
+                    <Link
+                      href="https://www.linkedin.com/in/christopher-abdo/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button variant="ghost" size="sm">
+                        <Linkedin className="h-4 w-4 opacity-70" />
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </HoverCardContent>
+          </HoverCard>
         </div>
         <div className="flex lg:hidden">
           <button
@@ -56,29 +131,36 @@ export default function Navbar() {
         </div>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <div className="flex space-x-2">
-            <Button variant="outline" className="z-50">
-              <Star className="mr-2" size={16} />
-              Star on GitHub
-            </Button>
+            <Link
+              href="https://www.github.com/chrisabdo/motionvariants"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="z-50"
+            >
+              <Button variant="outline">
+                <Star className="mr-2" size={16} />
+                Star on GitHub
+              </Button>
+            </Link>
             {mounted ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button variant="ghost" className="z-50">
-                    {theme === "light" && <Sun size={16} />}
-                    {theme === "dark" && <Moon size={16} />}
-                    {theme === "system" && <Laptop size={16} />}
+                    {theme === 'light' && <Sun size={16} />}
+                    {theme === 'dark' && <Moon size={16} />}
+                    {theme === 'system' && <Laptop size={16} />}
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-32 mr-12">
-                  <DropdownMenuItem onSelect={() => setTheme("light")}>
+                  <DropdownMenuItem onSelect={() => setTheme('light')}>
                     <Sun className="mr-2 h-4 w-4" />
                     <span>Light</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={() => setTheme("dark")}>
+                  <DropdownMenuItem onSelect={() => setTheme('dark')}>
                     <Moon className="mr-2 h-4 w-4" />
                     <span>Dark</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onSelect={() => setTheme("system")}>
+                  <DropdownMenuItem onSelect={() => setTheme('system')}>
                     <Laptop className="mr-2 h-4 w-4" />
                     <span>System</span>
                   </DropdownMenuItem>
