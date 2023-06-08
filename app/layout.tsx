@@ -14,6 +14,7 @@ export const metadata = {
   title: "Variant Vault - A collection of Framer Motion variants",
   description:
     "Variant Vault is a collection of Framer Motion variants that you can use in your own projects. All the variants are free to use for personal and commercial projects.",
+
   twitter: {
     card: "summary_large_image",
     title: "Variant Vault - A collection of Framer Motion variants",

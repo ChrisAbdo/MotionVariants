@@ -69,23 +69,41 @@ export default function Home() {
     },
   ];
 
+  const [query, setQuery] = React.useState("");
+
+  const filteredVariants =
+    query === ""
+      ? variants
+      : variants.filter((variant) => {
+          return variant.name.toLowerCase().includes(query.toLowerCase());
+        });
+
   return (
     <div>
-      <TextVariantsHeader />
+      <TextVariantsHeader
+        query={query}
+        setQuery={setQuery}
+        filteredVariants={filteredVariants}
+      />
 
       <div className="flex flex-col items-center min-h-screen py-2 space-y-6">
-        {variants.map((variant, index) => (
+        {/* {variants.map((variant, index) => ( */}
+        {filteredVariants.map((variant, index) => (
           <Tabs defaultValue="preview" className="w-11/12" key={index}>
-            <div className="flex justify-between">
-              <h1 className="hidden lg:flex items-center text-xl">
-                {variant.name}
-              </h1>
+            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
+              <div className="flex justify-between w-full mb-2 lg:mb-0">
+                <h1 className="text-xl">{variant.name}</h1>
 
-              <div className="flex space-x-6">
-                <TabsList
-                  className="grid w-[400px] 
-            grid-cols-2"
+                <Button
+                  onClick={() => restartAnimation(index)}
+                  variant="ghost"
+                  className="lg:hidden"
                 >
+                  <RefreshCcw size={24} />
+                </Button>
+              </div>
+              <div className="flex flex-col lg:flex-row space-y-4 lg:space-y-0 space-x-0 lg:space-x-6">
+                <TabsList className="grid w-[355px] lg:w-[400px] grid-cols-2">
                   <TabsTrigger value="preview">Preview</TabsTrigger>
                   <TabsTrigger value="code">Code</TabsTrigger>
                 </TabsList>
@@ -111,6 +129,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
+
             <TabsContent value="preview">
               <Card className="bg-background">
                 <CardContent className="bg-background text-primary space-y-2 mt-4">
