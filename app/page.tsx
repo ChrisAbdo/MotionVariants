@@ -127,7 +127,7 @@ export default function Example() {
                     >
                       <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                         <img
-                          src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
+                          src="/landing.jpeg"
                           alt="App screenshot"
                           width={2432}
                           height={1442}
@@ -321,7 +321,7 @@ export default function Example() {
                 </div>
               </div>
               <img
-                src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+                src="/landing.jpeg"
                 alt="Product screenshot"
                 className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-gray-400/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
                 width={2432}

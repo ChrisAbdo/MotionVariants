@@ -87,7 +87,7 @@ export default function AboutContent() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <motion.img
               variants={FADE_DOWN_ANIMATION_VARIANTS}
-              src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+              src="/landing.jpeg"
               alt="App screenshot"
               className="rounded-xl ring-1 ring-white/10"
               width={2432}
