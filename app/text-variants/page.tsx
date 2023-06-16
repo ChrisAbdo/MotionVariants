@@ -3,7 +3,7 @@
 import React from "react";
 import { ScrollArea } from "@/components/ui/scroll-area";
 
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Card, CardContent } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
@@ -19,8 +19,14 @@ import {
   FADE_DOWN_CODE,
   FADE_UP_CODE,
   MULTIDIRECTION_SLIDE_CODE,
+  RIPPLE_PULL_UP_CODE,
+  ROTATE_CODE,
+  SEPARATE_CODE,
   STAGGERED_FADE_IN_CODE,
   STAGGERED_PULL_UP_CODE,
+  STRIKE_THROUGH_CODE,
+  TYPING_EFFECT_CODE,
+  VELOCITY_CODE,
 } from "@/components/code-previews/code";
 import FadeDown from "@/components/variant-previews/fade-down";
 import FadeUp from "@/components/variant-previews/fade-up";
@@ -28,10 +34,16 @@ import MultiDirection from "@/components/variant-previews/multi-direction";
 import TextVariantsHeader from "@/components/headers/text-variants-header";
 import StaggeredFade from "@/components/variant-previews/staggered-fade";
 import FadeIn from "@/components/variant-previews/fade-in";
+import RipplePullUp from "@/components/variant-previews/ripple-pull-up";
+import VelocityScroll from "@/components/variant-previews/velocity-scroll";
+import RotateText from "@/components/variant-previews/rotate-text";
+import TypingEffect from "@/components/variant-previews/typing-effect";
+import SeparateAway from "@/components/variant-previews/separate-away";
+import StrikeText from "@/components/variant-previews/strike-text";
 
 export default function Home() {
   const generateZeros = (n: number) => Array(n).fill(0);
-  const [keys, setKeys] = React.useState(generateZeros(5));
+  const [keys, setKeys] = React.useState(generateZeros(15));
 
   function restartAnimation(index: number) {
     setKeys((prevKeys) => {
@@ -66,6 +78,36 @@ export default function Home() {
       name: "Staggered Letter Pull Up",
       preview: <FadeIn key={keys[4]} />,
       code: STAGGERED_PULL_UP_CODE,
+    },
+    {
+      name: "Ripple Pull Up",
+      preview: <RipplePullUp key={keys[5]} />,
+      code: RIPPLE_PULL_UP_CODE,
+    },
+    {
+      name: "Velocity Scroll",
+      preview: <VelocityScroll key={keys[6]} />,
+      code: VELOCITY_CODE,
+    },
+    {
+      name: "Rotate Between Words",
+      preview: <RotateText key={keys[7]} />,
+      code: ROTATE_CODE,
+    },
+    {
+      name: "Typing Effect",
+      preview: <TypingEffect key={keys[8]} />,
+      code: TYPING_EFFECT_CODE,
+    },
+    {
+      name: "Separate Away",
+      preview: <SeparateAway key={keys[9]} />,
+      code: SEPARATE_CODE,
+    },
+    {
+      name: "Strike Text",
+      preview: <StrikeText key={keys[10]} />,
+      code: STRIKE_THROUGH_CODE,
     },
   ];
 
@@ -152,6 +194,8 @@ export default function Home() {
             </TabsContent>
           </Tabs>
         ))}
+
+        <h1 className="text-2xl">More coming soon...</h1>
       </div>
     </div>
   );
