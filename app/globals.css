@@ -19,7 +19,9 @@
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
  
-    --primary: 222.2 47.4% 11.2%;
+    /* --primary: 222.2 47.4% 11.2%; */
+    /* primary should be black */
+    --primary: 0 0% 0%;
     --primary-foreground: 210 40% 98%;
  
     --secondary: 210 40% 96.1%;
@@ -37,7 +39,7 @@
   }
  
   /* .dark { */
-    [data-theme="dark"] {
+  [data-theme="dark"] {
     
     --background: 224 71% 4%;
     --foreground: 213 31% 91%;
