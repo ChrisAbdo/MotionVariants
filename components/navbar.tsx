@@ -27,6 +27,7 @@ import {
   HoverCardTrigger,
 } from "@/components/ui/hover-card";
 import { useTheme } from "next-themes";
+import { Separator } from "./ui/separator";
 
 const navigation = [
   { name: "Text Variants", href: "/text-variants" },
@@ -136,11 +137,12 @@ export default function Navbar() {
               rel="noopener noreferrer"
               className="z-50 hidden lg:block"
             >
-              <Button variant="outline">
+              <Button variant="ghost">
                 <Star className="mr-2" size={16} />
                 Star on GitHub
               </Button>
             </Link>
+
             {mounted ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

@@ -457,3 +457,114 @@ export default function StrikeText() {
   );
 }
 `;
+
+export const GRADUAL_SPACING_CODE = `
+import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+
+export default function GradualSpacing() {
+  const text = "Gradual Spacing";
+  const variants1 = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  };
+  return (
+    <div className="flex space-x-1 justify-center">
+      <AnimatePresence>
+        {text.split("").map((char, i) => (
+          <motion.h1
+            key={i}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={variants1}
+            transition={{ duration: 0.5, delay: i * 0.1 }}
+            className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
+          >
+            {char}
+          </motion.h1>
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+}
+`;
+
+export const BLUR_CODE = `
+import { motion } from "framer-motion";
+import React from "react";
+
+export default function Blur() {
+  const variants1 = {
+    hidden: { filter: "blur(10px)", opacity: 0 },
+    visible: { filter: "blur(0px)", opacity: 1 },
+  };
+  return (
+    <motion.h1
+      initial="hidden"
+      animate="visible"
+      transition={{ duration: 1 }}
+      variants={variants1}
+      className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
+    >
+      Blur In
+    </motion.h1>
+  );
+}
+`;
+
+export const BLINK_CODE = `
+import { motion } from "framer-motion";
+import React from "react";
+
+export default function BlinkingText() {
+  const variants1 = {
+    visible: { opacity: 1 },
+    hidden: { opacity: 0 },
+  };
+  return (
+    <motion.h1
+      initial="visible"
+      animate={{ opacity: [1, 0, 1] }}
+      transition={{ duration: 0.5, repeat: Infinity }}
+      variants={variants1}
+      className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
+    >
+      Blinking Text
+    </motion.h1>
+  );
+}
+`;
+
+export const SLIGHT_FLIP_CODE = `
+import { AnimatePresence, motion } from "framer-motion";
+import React from "react";
+
+export default function SlightFlip() {
+  const word = "Slight Flip Text";
+  const variants1 = {
+    hidden: { rotateX: -90, opacity: 0 },
+    visible: { rotateX: 0, opacity: 1 },
+  };
+  return (
+    <div className="flex space-x-2 justify-center">
+      <AnimatePresence>
+        {word.split("").map((char, i) => (
+          <motion.span
+            key={i}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={variants1}
+            transition={{ duration: 0.5, delay: i * 0.2 }}
+            className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
+            style={{ transformOrigin: "50% 50%" }}
+          >
+            {char}
+          </motion.span>
+        ))}
+      </AnimatePresence>
+    </div>
+  );
+}
+`;

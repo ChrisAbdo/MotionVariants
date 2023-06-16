@@ -3,13 +3,9 @@ import Link from "next/link";
 import React from "react";
 import { Input } from "../ui/input";
 
-export default function TextVariantsHeader({
-  query,
-  setQuery,
-  filteredVariants,
-}: any) {
+export default function TextVariantsHeader({ setQuery }: any) {
   return (
-    <div className="p-12">
+    <div className="px-12 mb-6">
       <div>
         <nav className="sm:hidden" aria-label="Back">
           <Link
@@ -31,10 +27,6 @@ export default function TextVariantsHeader({
                   href="/"
                   className="flex text-sm font-medium text-muted-foreground hover:text-primary duration-200 transition-all"
                 >
-                  <Home
-                    className="mr-2 h-5 w-5 flex-shrink-0"
-                    aria-hidden="true"
-                  />
                   Home
                 </Link>
               </div>
@@ -47,7 +39,7 @@ export default function TextVariantsHeader({
                 />
                 <Link
                   href="/text-variants"
-                  className="ml-4 text-sm font-medium text-muted-foreground hover:text-primary duration-200 transition-all"
+                  className="ml-4 text-sm font-medium"
                 >
                   Text Variants
                 </Link>

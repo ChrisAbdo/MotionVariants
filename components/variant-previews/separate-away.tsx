@@ -19,7 +19,7 @@ export default function SeparateAway() {
         animate="visible"
         className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
       >
-        FIRST
+        Separate
       </motion.h1>
       <motion.h1
         custom={1}
@@ -28,7 +28,7 @@ export default function SeparateAway() {
         animate="visible"
         className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
       >
-        SECOND
+        Away
       </motion.h1>
     </div>
   );
