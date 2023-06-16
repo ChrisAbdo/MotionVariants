@@ -33,7 +33,7 @@ import FadeUp from "@/components/variant-previews/fade-up";
 import MultiDirection from "@/components/variant-previews/multi-direction";
 import TextVariantsHeader from "@/components/headers/text-variants-header";
 import StaggeredFade from "@/components/variant-previews/staggered-fade";
-import FadeIn from "@/components/variant-previews/fade-in";
+import StaggerPullUp from "@/components/variant-previews/stagger-pull-up";
 import RipplePullUp from "@/components/variant-previews/ripple-pull-up";
 import VelocityScroll from "@/components/variant-previews/velocity-scroll";
 import RotateText from "@/components/variant-previews/rotate-text";
@@ -76,7 +76,7 @@ export default function Home() {
     },
     {
       name: "Staggered Letter Pull Up",
-      preview: <FadeIn key={keys[4]} />,
+      preview: <StaggerPullUp key={keys[4]} />,
       code: STAGGERED_PULL_UP_CODE,
     },
     {

@@ -140,24 +140,35 @@ const words = sentence.split(" ");
 
 export const STAGGERED_PULL_UP_CODE = `
 // DEFINE ANIMATION VARIANT
+const FADE_IN_ANIMATION_VARIANTS = {
+  initial: { y: 100, opacity: 0 },
+  animate: (i) => ({
+    y: 0,
+    opacity: 1,
+    transition: {
+      delay: i * 0.05, // Delay each letter's animation by 0.05 seconds
+    }
+  })
+}
 
 const words = 'staggered pull up';
 const letters = words.split('');
 
 // USE ANIMATION VARIANT
-
-{letters.map((letter, i) => (
-  <motion.h1
-    key={i}
-    variants={FADE_IN_ANIMATION_VARIANTS}
-    initial="initial"
-    animate="animate"
-    custom={i}
-    className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
-  >
-    {letter}
-  </motion.h1>
-))}
+<div className="flex justify-center">
+  {letters.map((letter, i) => (
+    <motion.span
+      key={i}
+      variants={FADE_IN_ANIMATION_VARIANTS}
+      initial="initial"
+      animate="animate"
+      custom={i}
+      className="text-center font-display text-4xl font-bold tracking-[-0.02em] drop-shadow-sm md:text-7xl md:leading-[5rem]"
+    >
+      {letter}
+    </motion.span>
+  ))}
+</div>
 `;
 
 export const PAGE_SLIDE_CODE = `
@@ -231,7 +242,6 @@ import React from "react";
 import { wrap } from "@motionone/utils";
 import {
   motion,
-  AnimatePresence,
   useScroll,
   useSpring,
   useTransform,
@@ -239,6 +249,7 @@ import {
   useVelocity,
   useAnimationFrame,
 } from "framer-motion";
+
 interface ParallaxProps {
   children: string;
   baseVelocity: number;
