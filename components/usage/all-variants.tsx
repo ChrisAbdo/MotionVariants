@@ -29,7 +29,7 @@ export default function AllVariants() {
   }, [copied]);
 
   return (
-    <Accordion type="single" collapsible>
+    <Accordion type="single" collapsible className="w-full">
       <AccordionItem value="item-1">
         <AccordionTrigger>Variant Definitions</AccordionTrigger>
         <AccordionContent>

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
+import VariantCarousel from "./variant-carousel";
 
 export default function IntroText() {
   const ref = React.useRef(null);
@@ -75,14 +76,12 @@ export default function IntroText() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
             >
-              <div className="-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4">
-                <Image
-                  src="/landing.jpeg"
-                  alt="App screenshot"
-                  width={2432}
-                  height={1442}
-                  className="rounded-md shadow-2xl ring-1 ring-gray-900/10"
-                />
+              <div className="-m-2 rounded-xl bg-primary/5 p-2 ring-1 ring-inset ring-primary/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+                <h1 className="text-2xl font-bold tracking-tight sm:text-4xl mb-1">
+                  Variants Interactive Demo
+                </h1>
+
+                <VariantCarousel />
               </div>
             </motion.div>
           </AnimatePresence>

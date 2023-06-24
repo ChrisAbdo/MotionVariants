@@ -23,6 +23,9 @@ export default function MainNav() {
       }
     };
 
+    // Call handleScroll on initial render
+    handleScroll();
+
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);

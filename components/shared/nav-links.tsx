@@ -9,7 +9,7 @@ import React from "react";
 export default function NavLinks() {
   const pathname = usePathname();
   return (
-    <div className="flex items-center space-x-6 text-sm">
+    <div className="flex items-center space-x-6 text-md">
       <Link
         href="/usage"
         className={cn(
@@ -30,17 +30,16 @@ export default function NavLinks() {
       >
         Text Variants
       </Link>
-      <Link
-        href="/page-variants"
+      <h1
         className={cn(
-          "transition-colors hover:text-foreground/80",
+          "cursor-not-allowed",
           pathname === "/page-variants"
             ? "text-foreground"
             : "text-foreground/60"
         )}
       >
         Page Variants
-      </Link>
+      </h1>
     </div>
   );
 }

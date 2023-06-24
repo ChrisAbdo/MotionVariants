@@ -1,6 +1,7 @@
 import AllVariants from "@/components/usage/all-variants";
 import CallToAction from "@/components/usage/call-to-action";
 import Copy from "@/components/usage/copy";
+import Intro from "@/components/usage/intro";
 
 export default function Home() {
   const faqs = [
@@ -40,41 +41,7 @@ export default function Home() {
   return (
     <div>
       <div className="mx-auto max-w-7xl px-6 py-16 sm:py-24 lg:px-8">
-        <h2 className="text-2xl font-bold leading-10 tracking-tight">
-          Variant Vault Usage Guide
-        </h2>
-
-        <div className="mb-12">
-          <p className="mt-4 text-lg">
-            Using Variant Vault is easy. All you need to do is install Framer
-            Motion and copy and paste the code into your project.
-          </p>
-          <div className="not-prose my-6 rounded-2xl bg-primary-foreground">
-            <div className="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-2 rounded-t-lg border bg-primary-foreground px-4">
-              <h3 className="mr-auto pt-3 text-xs font-semibold ">
-                Step 1: Install Framer Motion
-              </h3>
-            </div>
-            <div className="group border-l border-r border-b rounded-b-lg">
-              <div className="relative">
-                <pre className="overflow-x-auto p-4 text-xs">
-                  <code className="language-bash">
-                    <span>
-                      <span>yarn add framer-motion</span>
-                    </span>
-                  </code>
-                </pre>
-
-                <Copy />
-              </div>
-            </div>
-          </div>
-        </div>
-        <p className="mt-4 text-lg">
-          Here are all the variant definitions in case you want to make a
-          constants file.
-        </p>
-        <AllVariants />
+        <Intro />
 
         <CallToAction />
 
