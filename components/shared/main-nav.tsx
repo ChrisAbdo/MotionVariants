@@ -9,6 +9,7 @@ import NavLinks from "@/components/shared/nav-links";
 import VVLogo from "@/components/shared/vv-logo";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import NavSheet from "./nav-sheet";
 
 export default function MainNav() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -52,7 +53,8 @@ export default function MainNav() {
           </div>
         </div>
         <div className="flex lg:hidden z-50">
-          <NavDropdown />
+          {/* <NavDropdown /> */}
+          <NavSheet />
         </div>
         <div className="hidden lg:flex space-x-1 z-50">
           <Link
