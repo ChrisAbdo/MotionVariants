@@ -1,5 +1,6 @@
-import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { CodeIcon } from "@radix-ui/react-icons";
+import AllVariants from "@/components/usage/all-variants";
+import CallToAction from "@/components/usage/call-to-action";
+import Copy from "@/components/usage/copy";
 
 export default function Home() {
   const faqs = [
@@ -33,12 +34,6 @@ export default function Home() {
       answer:
         "No, you don't need to give credit to Variant Vault. However, if you want to, you can link to Variant Vault on Twitter @abdo_eth.",
     },
-    {
-      id: 6,
-      question: "What's the best thing about Switzerland?",
-      answer:
-        "I don't know, but the flag is a big plus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas cupiditate laboriosam fugiat.",
-    },
 
     // More questions...
   ];
@@ -48,19 +43,41 @@ export default function Home() {
         <h2 className="text-2xl font-bold leading-10 tracking-tight">
           Variant Vault Usage Guide
         </h2>
-        <Alert className="mt-4">
-          <CodeIcon className="h-4 w-4" />
-          <AlertTitle>npm i framer-motion</AlertTitle>
-          <AlertDescription>
-            Install Framer Motion in your project. This is the only dependency!
-          </AlertDescription>
-        </Alert>
 
-        <p className="mt-6 max-w-2xl text-base leading-7">
-          Variant Vault is completely free to use. It is as simple as copy and
-          pasting into your own project. If you have any questions, please reach
-          out to me on Twitter @abdo_eth.
+        <div className="mb-12">
+          <p className="mt-4 text-lg">
+            Using Variant Vault is easy. All you need to do is install Framer
+            Motion and copy and paste the code into your project.
+          </p>
+          <div className="not-prose my-6 rounded-2xl bg-primary-foreground">
+            <div className="flex min-h-[calc(theme(spacing.12)+1px)] flex-wrap items-start gap-x-2 rounded-t-lg border bg-primary-foreground px-4">
+              <h3 className="mr-auto pt-3 text-xs font-semibold ">
+                Step 1: Install Framer Motion
+              </h3>
+            </div>
+            <div className="group border-l border-r border-b rounded-b-lg">
+              <div className="relative">
+                <pre className="overflow-x-auto p-4 text-xs">
+                  <code className="language-bash">
+                    <span>
+                      <span>yarn add framer-motion</span>
+                    </span>
+                  </code>
+                </pre>
+
+                <Copy />
+              </div>
+            </div>
+          </div>
+        </div>
+        <p className="mt-4 text-lg">
+          Here are all the variant definitions in case you want to make a
+          constants file.
         </p>
+        <AllVariants />
+
+        <CallToAction />
+
         <div className="mt-20">
           <dl className="space-y-16 sm:grid sm:grid-cols-2 sm:gap-x-6 sm:gap-y-16 sm:space-y-0 lg:gap-x-10">
             {faqs.map((faq) => (

@@ -47,13 +47,13 @@ export default function IntroText() {
 
           <motion.div
             variants={FADE_DOWN_ANIMATION_VARIANTS}
-            className="mt-10 flex items-center justify-center gap-x-6"
+            className="mt-10 flex items-center justify-center gap-x-6 "
           >
-            <Link href="/text-variants">
+            <Link href="/text-variants" className="z-50">
               <Button>Get started</Button>
             </Link>
 
-            <Link href="/about">
+            <Link href="/usage" className="z-50">
               <Button variant="ghost">
                 Learn more &nbsp;<span aria-hidden="true">→</span>
               </Button>

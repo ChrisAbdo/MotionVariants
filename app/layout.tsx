@@ -2,6 +2,8 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/toaster";
+
 import MainNav from "@/components/shared/main-nav";
 import Footer from "@/components/shared/footer";
 
@@ -24,6 +26,7 @@ export default function RootLayout({
           <MainNav />
           {children}
           <Footer />
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>
