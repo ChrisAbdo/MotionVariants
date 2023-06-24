@@ -46,6 +46,7 @@ import {
 } from "@/variants/variant-previews";
 import { Input } from "@/components/ui/input";
 import Link from "next/link";
+import { Spotlight } from "@/components/shared/spotlight";
 
 export default function Home() {
   let generateZeros = (n: number) => Array(n).fill(0);
@@ -142,20 +143,21 @@ export default function Home() {
   return (
     <div className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
       <div className="w-full">
-        <div className="flex flex-col items-center min-h-screen py-2 space-y-6">
+        <div className="flex flex-col items-center min-h-screen py-2 space-y-12">
           <div className="mb-6 w-full">
-            <Input
-              type="search"
-              placeholder="Search for a variant"
-              onChange={(e) => setQuery(e.target.value)}
-            />
+            <Spotlight filteredVariants={filteredVariants} />
           </div>
           {filteredVariants.length > 0 ? (
             filteredVariants.map((variant, index) => (
               <Tabs defaultValue="preview" className="w-full" key={index}>
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center">
                   <div className="flex justify-between w-full mb-2 lg:mb-0">
-                    <h1 className="text-xl">{variant.name}</h1>
+                    <h1
+                      id={variant.name.toLowerCase().replace(" ", "-")}
+                      className="text-xl"
+                    >
+                      {variant.name}
+                    </h1>
 
                     <Button
                       variant="ghost"

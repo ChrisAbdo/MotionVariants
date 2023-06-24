@@ -68,7 +68,7 @@ export default function Info() {
               >
                 <motion.h2
                   variants={FADE_UP_ANIMATION_VARIANTS}
-                  className="text-base font-semibold leading-7 text-indigo-600"
+                  className="text-base font-semibold leading-7 text-muted-foreground"
                 >
                   Get started quickly
                 </motion.h2>
@@ -95,7 +95,7 @@ export default function Info() {
                     >
                       <dt className="inline font-semibold">
                         <feature.icon
-                          className="absolute left-1 top-1 h-5 w-5 text-indigo-600"
+                          className="absolute left-1 top-1 h-5 w-5 text-muted-foreground"
                           aria-hidden="true"
                         />
                         {feature.name}

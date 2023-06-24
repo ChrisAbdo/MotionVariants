@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/card";
 import { Button } from "../ui/button";
 import {
+  CodeIcon,
   ReloadIcon,
   TriangleLeftIcon,
   TriangleRightIcon,
@@ -47,6 +48,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 export default function VariantCarousel() {
   let generateZeros = (n: number) => Array(n).fill(0);
@@ -211,8 +213,20 @@ export default function VariantCarousel() {
         <CardContent>
           {React.cloneElement(variants[index].preview, { key: key })}
         </CardContent>
-        <CardFooter>
-          <CardDescription>{variants[index].name}</CardDescription>
+        <CardFooter className="flex justify-between items-center">
+          <CardDescription>
+            <span>{variants[index].name}</span>
+          </CardDescription>
+          <Link
+            href={`/text-variants#${variants[index].name
+              .toLowerCase()
+              .replace(" ", "-")}`}
+          >
+            <Button variant="secondary">
+              <CodeIcon className="w-5 h-5 mr-2" />
+              View Code
+            </Button>
+          </Link>
         </CardFooter>
       </Card>
     </motion.div>

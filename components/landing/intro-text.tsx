@@ -55,7 +55,7 @@ export default function IntroText() {
             </Link>
 
             <Link href="/usage" className="z-50">
-              <Button variant="ghost">
+              <Button variant="outline">
                 Learn more &nbsp;<span aria-hidden="true">→</span>
               </Button>
             </Link>
