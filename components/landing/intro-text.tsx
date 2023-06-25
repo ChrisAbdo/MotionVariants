@@ -76,7 +76,7 @@ export default function IntroText() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.25 }}
             >
-              <div className="-m-2 rounded-xl bg-primary/5 p-2 ring-1 ring-inset ring-primary/10 lg:-m-4 lg:rounded-2xl lg:p-4">
+              <div className="-m-2 rounded-xl  p-2 ring-1 ring-inset ring-primary/10 lg:-m-4 lg:rounded-2xl lg:p-4">
                 <h1 className="text-2xl font-bold tracking-tight sm:text-4xl mb-1">
                   Variants Interactive Demo
                 </h1>

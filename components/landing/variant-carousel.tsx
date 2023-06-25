@@ -166,13 +166,13 @@ export default function VariantCarousel() {
   ];
 
   return (
-    <motion.div layout>
-      <Card>
+    <div>
+      <Card className="bg-primary/5">
         <CardHeader>
           <CardTitle>
             <div className="flex justify-between space-x-1">
               <Select onValueChange={(value: any) => setIndex(value - 1)}>
-                <SelectTrigger className="w-[250px]">
+                <SelectTrigger className="w-[250px] bg-background">
                   <SelectValue placeholder="Search variants" />
                 </SelectTrigger>
                 <SelectContent>
@@ -210,9 +210,13 @@ export default function VariantCarousel() {
             </div>
           </CardTitle>
         </CardHeader>
-        <CardContent>
-          {React.cloneElement(variants[index].preview, { key: key })}
-        </CardContent>
+
+        <div>
+          <CardContent>
+            {React.cloneElement(variants[index].preview, { key: key })}
+          </CardContent>
+        </div>
+
         <CardFooter className="flex justify-between items-center">
           <CardDescription>
             <span>{variants[index].name}</span>
@@ -224,11 +228,11 @@ export default function VariantCarousel() {
           >
             <Button variant="secondary">
               <CodeIcon className="w-5 h-5 mr-2" />
-              View Code
+              View
             </Button>
           </Link>
         </CardFooter>
       </Card>
-    </motion.div>
+    </div>
   );
 }
